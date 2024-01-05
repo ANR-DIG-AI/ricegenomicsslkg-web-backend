@@ -1,11 +1,11 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
+  "name": "WheatGenomicsSLKG Web Application Backend Services",
   "license": "https://spdx.org/licenses/Apache-2.0",
   "codeRepository": "https://github.com/Wimmics/wheatgenomicsslkg-web-backend",
   "datePublished": "2024-01-05",
   "issueTracker": "https://github.com/Wimmics/wheatgenomicsslkg-web-backend/issues",
-  "name": "WheatGenomicsSLKG Web Application Backend Services",
   "version": "1.0",
   "description": "This repository is the backend part of a web application meant to search articles in the WheatGenomicsSLKG and provide a visualization of their metadata.",
   "funding": "D2KAB project",
@@ -45,6 +45,16 @@
         "@type": "Organization",
         "name": "University Côte d'Azur, CNRS, Inria"
       }
+    },{
+      "@type": "Person",
+      "givenName": "Steven",
+      "familyName": "Essam",
+      "sameAs": "https://www.linkedin.com/in/stevenessam/",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "University Côte d'Azur"
+      }
     }
+
   ]
 }
