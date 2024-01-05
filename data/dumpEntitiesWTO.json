@@ -3,1575 +3,1575 @@
         "entityUri": "http://opendata.inrae.fr/wto/0000104",
         "entityLabel": "response to vernalization",
         "count": "8",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000146",
         "entityLabel": "protein content of seed",
         "entityPrefLabel": "grain protein content",
         "count": "84",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "Fusarium resistance",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Fusarium graminearum",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000551",
         "entityLabel": "powdery mildew resistance",
         "entityPrefLabel": "resistance to Powdery mildew",
-        "count": "197",
-        "source": "WTO"
+        "count": "199",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000554",
         "entityLabel": "resistance to STB",
         "entityPrefLabel": "resistance to Septoria leaf blotch",
         "count": "9",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000361",
         "entityLabel": "toxin sensitivity",
         "count": "6",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000464",
         "entityLabel": "high temperature resistance",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000330",
         "entityLabel": "metal toxicity",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000136",
         "entityLabel": "female sterility",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000222",
         "entityLabel": "flour colour",
         "count": "8",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000451",
         "entityLabel": "As toxicity",
         "entityPrefLabel": "arsenic toxicity",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000264",
         "entityLabel": "photoperiodic response",
         "entityPrefLabel": "sensitivity to photoperiod",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000215",
         "entityLabel": "crumb firmness",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Fusarium spp.",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Microdochium nivale",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000549",
         "entityLabel": "resistance to Puccinia recondita",
         "entityPrefLabel": "resistance to Leaf rust",
         "count": "189",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "resistance to a plant pathogen",
         "entityPrefLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "resistance to infection",
         "entityPrefLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "resistance to the plant pathogen",
         "entityPrefLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000506",
         "entityLabel": "rust resistance",
         "entityPrefLabel": "resistance to rust",
         "count": "124",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000432",
         "entityLabel": "resistance to Diuraphis noxia Kurdjumov",
         "entityPrefLabel": "Russian wheat aphid resistance",
         "count": "6",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000344",
         "entityLabel": "response to phosphorus deficiency",
         "entityPrefLabel": "response to phophorus limitation",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000102",
         "entityLabel": "biotic stress resistance",
         "entityPrefLabel": "response to biotic stress",
         "count": "12",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000310",
         "entityLabel": "dough strength",
         "count": "15",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000500",
         "entityLabel": "resistance to imidazolinone",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000510",
         "entityLabel": "resistance to Magnaporthe grisea",
         "entityPrefLabel": "resistance to wheat blast",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000330",
         "entityLabel": "metal rhizotoxicity",
         "entityPrefLabel": "metal toxicity",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000453",
         "entityLabel": "boron toxicity",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000127",
         "entityLabel": "baking quality",
         "entityPrefLabel": "bread making quality",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000223",
         "entityLabel": "flour composition",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000587",
         "entityLabel": "glutenin content",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000029",
         "entityLabel": "no response to vernalization",
         "entityPrefLabel": "lack of vernalization requirement",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000553",
         "entityLabel": "resistance to Rhizoctonia Stunt",
         "entityPrefLabel": "resistance to Rhizoctonia root rot",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000249",
         "entityLabel": "potassium deficiency",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000071",
         "entityLabel": "crop yield",
-        "count": "285",
-        "source": "WTO"
+        "count": "288",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000146",
         "entityLabel": "grain protein content",
         "count": "84",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000293",
         "entityLabel": "Hessian fly resistance",
         "count": "22",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000450",
         "entityLabel": "aluminium toxicity",
         "count": "7",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000143",
         "entityLabel": "kernel hardness",
         "entityPrefLabel": "grain texture",
         "count": "40",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "Fusarium head blight resistance",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Fusarium culmorum",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Microdochium majus",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to head blight",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000551",
         "entityLabel": "resistance to Erysiphe graminis f. sp. tritici",
         "entityPrefLabel": "resistance to Powdery mildew",
-        "count": "197",
-        "source": "WTO"
+        "count": "199",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000561",
         "entityLabel": "resistance to Puccinia graminis f.sp. tritici",
         "entityPrefLabel": "resistance to Stem rust",
-        "count": "117",
-        "source": "WTO"
+        "count": "118",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000568",
         "entityLabel": "resistance to wheat streak mosaic",
         "entityPrefLabel": "resistance to wheat streak mosaic virus",
         "count": "7",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "disease and/or pathogen resistance",
         "entityPrefLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "disease-resistance",
         "entityPrefLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "resistance to disease",
         "entityPrefLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000369",
         "entityLabel": "winter hardiness",
         "count": "7",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000311",
         "entityLabel": "DEPRECATED drought tolerance",
         "count": "131",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000340",
         "entityLabel": "resistance to fungi",
         "entityPrefLabel": "resistance to a fungal pathogen",
-        "count": "17",
-        "source": "WTO"
+        "count": "18",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000554",
         "entityLabel": "resistance to Septoria tritici",
         "entityPrefLabel": "resistance to Septoria leaf blotch",
         "count": "9",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000554",
         "entityLabel": "resistance to Zymoseptoria tritici",
         "entityPrefLabel": "resistance to Septoria leaf blotch",
         "count": "9",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000326",
         "entityLabel": "heat susceptibility",
         "entityPrefLabel": "heat resistance",
         "count": "97",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000179",
         "entityLabel": "pre-harvest sprouting tolerance",
         "count": "27",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000070",
         "entityLabel": "coleoptile length",
         "count": "13",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000560",
         "entityLabel": "resistance to Leptosphaeria nodorum",
         "entityPrefLabel": "resistance to Stagonospora nodorum",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000560",
         "entityLabel": "resistance to Septoria nodorum",
         "entityPrefLabel": "resistance to Stagonospora nodorum",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000577",
         "entityLabel": "DEPRECATED resistance to Rhizoctonia Root Rot",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000304",
         "entityLabel": "cold resistance",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000561",
         "entityLabel": "resistance to Stem rust",
-        "count": "117",
-        "source": "WTO"
+        "count": "118",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000071",
         "entityLabel": "GY",
         "entityPrefLabel": "crop yield",
-        "count": "285",
-        "source": "WTO"
+        "count": "288",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000143",
         "entityLabel": "softness of the grain",
         "entityPrefLabel": "grain texture",
         "count": "40",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000146",
         "entityLabel": "seed protein content",
         "entityPrefLabel": "grain protein content",
         "count": "84",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000549",
         "entityLabel": "leaf rust resistance",
         "entityPrefLabel": "resistance to Leaf rust",
         "count": "189",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000551",
         "entityLabel": "resistance to powdery mildew",
         "entityPrefLabel": "resistance to Powdery mildew",
-        "count": "197",
-        "source": "WTO"
+        "count": "199",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000561",
         "entityLabel": "resistance to Puccinia graminis",
         "entityPrefLabel": "resistance to Stem rust",
-        "count": "117",
-        "source": "WTO"
+        "count": "118",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000363",
         "entityLabel": "virus resistance",
         "count": "16",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000363",
         "entityLabel": "resistance to viral disease",
         "entityPrefLabel": "virus resistance",
         "count": "16",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000363",
         "entityLabel": "viral resistance",
         "entityPrefLabel": "virus resistance",
         "count": "16",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000160",
         "entityLabel": "male sterility",
         "count": "47",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000151",
         "entityLabel": "harvest index",
         "count": "14",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000002",
         "entityLabel": "polyphenolic compounds content",
         "entityPrefLabel": "grain polyphenol content",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000202",
         "entityLabel": "thousand kernel weight",
         "count": "14",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000537",
         "entityLabel": "Mg toxicity",
         "entityPrefLabel": "manganese toxicity",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000321",
         "entityLabel": "frost-hardiness",
         "entityPrefLabel": "frost resistance",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000560",
         "entityLabel": "resistance to Stagonospora nodorum",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000259",
         "entityLabel": "adaptation to water stress",
         "entityPrefLabel": "response to water deficiency",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000259",
         "entityLabel": "responses to drought",
         "entityPrefLabel": "response to water deficiency",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000253",
         "entityLabel": "resistance to arthropod",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000171",
         "entityLabel": "kernel number per square meter",
         "entityPrefLabel": "number of grains per square meter",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000534",
         "entityLabel": "copper toxicity",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000553",
         "entityLabel": "resistance to Bare Patch",
         "entityPrefLabel": "resistance to Rhizoctonia root rot",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000549",
         "entityLabel": "resistance to Leaf rust",
         "count": "189",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000146",
         "entityLabel": "protein content",
         "entityPrefLabel": "grain protein content",
         "count": "84",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000205",
         "entityLabel": "resistance to Al",
         "entityPrefLabel": "aluminium tolerance",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000261",
         "entityLabel": "adaptation to salt stress",
         "entityPrefLabel": "salt tolerance",
         "count": "103",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000293",
         "entityLabel": "resistance to Mayetiola destructor",
         "entityPrefLabel": "Hessian fly resistance",
         "count": "22",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Fusarium nivale",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Monographella nivalis",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "resistance to a pathogen",
         "entityPrefLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000432",
         "entityLabel": "Russian wheat aphid resistance",
         "count": "6",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000432",
         "entityLabel": "resistance to RWA",
         "entityPrefLabel": "Russian wheat aphid resistance",
         "count": "6",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000340",
         "entityLabel": "resistance to a fungal pathogen",
-        "count": "17",
-        "source": "WTO"
+        "count": "18",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000562",
         "entityLabel": "resistance to yellow rust",
         "entityPrefLabel": "resistance to Stripe rust",
         "count": "147",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000025",
         "entityLabel": "high grain protein content",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000233",
         "entityLabel": "insect resistance trait",
         "entityPrefLabel": "insect resistance",
         "count": "8",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000233",
         "entityLabel": "resistance to insect pest",
         "entityPrefLabel": "insect resistance",
         "count": "8",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000344",
         "entityLabel": "response to phosphate limitation",
         "entityPrefLabel": "response to phophorus limitation",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000595",
         "entityLabel": "DEPRECATED resistance to Bipolaris sorokiniana",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000002",
         "entityLabel": "grain polyphenol content",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000002",
         "entityLabel": "content of total polyphenols",
         "entityPrefLabel": "grain polyphenol content",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000241",
         "entityLabel": "nitrogen deficiency",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000001",
         "entityLabel": "plant property",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000501",
         "entityLabel": "resistance to mildew",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000296",
         "entityLabel": "aphid resistance",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000531",
         "entityLabel": "Cd toxicity",
         "entityPrefLabel": "cadmium toxicity",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000259",
         "entityLabel": "response to water deficiency",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000050",
         "entityLabel": "response to environmental condition",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000171",
         "entityLabel": "grain number per square meter",
         "entityPrefLabel": "number of grains per square meter",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000553",
         "entityLabel": "Resistance to Thanatephorus cucumeris",
         "entityPrefLabel": "resistance to Rhizoctonia root rot",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000190",
         "entityLabel": "seed dormancy",
         "count": "41",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000205",
         "entityLabel": "aluminium tolerance",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000143",
         "entityLabel": "hardness of the grain",
         "entityPrefLabel": "grain texture",
         "count": "40",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000261",
         "entityLabel": "salt tolerance",
         "entityPrefLabel": "salt tolerance",
         "count": "103",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "FHB resistance",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Gibberella zeae",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000568",
         "entityLabel": "resistance to WSMV",
         "entityPrefLabel": "resistance to wheat streak mosaic virus",
         "count": "7",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000099",
         "entityLabel": "plant height",
-        "count": "134",
-        "source": "WTO"
+        "count": "135",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000554",
         "entityLabel": "resistance to Septoria Tritici Blotch",
         "entityPrefLabel": "resistance to Septoria leaf blotch",
         "count": "9",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000562",
         "entityLabel": "stripe rust resistance",
         "entityPrefLabel": "resistance to Stripe rust",
         "count": "147",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000219",
         "entityLabel": "DEPRECATED endosperm texture",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000233",
         "entityLabel": "resistance to insect",
         "entityPrefLabel": "insect resistance",
         "count": "8",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000102",
         "entityLabel": "response to biotic stress",
         "count": "12",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000325",
         "entityLabel": "Greenbug resistance",
         "count": "9",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000202",
         "entityLabel": "TKW",
         "entityPrefLabel": "thousand kernel weight",
         "count": "14",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000567",
         "entityLabel": "resistance to orange wheat blossom midge",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000567",
         "entityLabel": "resistance to Sitodiplosis mosellana",
         "entityPrefLabel": "resistance to orange wheat blossom midge",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000321",
         "entityLabel": "frost hardiness",
         "entityPrefLabel": "frost resistance",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000171",
         "entityLabel": "number of grains per square meter",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000146",
         "entityLabel": "GPC",
         "entityPrefLabel": "grain protein content",
         "count": "84",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000190",
         "entityLabel": "grain dormancy",
         "entityPrefLabel": "seed dormancy",
         "count": "41",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Ear Blight",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Fusarium langsethiae",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to head scab",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000335",
         "entityLabel": "nematode resistance",
         "count": "9",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000340",
         "entityLabel": "fungal resistance",
         "entityPrefLabel": "resistance to a fungal pathogen",
-        "count": "17",
-        "source": "WTO"
+        "count": "18",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000095",
         "entityLabel": "nutrient deficiency",
         "count": "14",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000151",
         "entityLabel": "HI",
         "entityPrefLabel": "harvest index",
         "count": "14",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000233",
         "entityLabel": "insect resistance",
         "count": "8",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000566",
         "entityLabel": "resistance to Ustilago tritici",
         "entityPrefLabel": "resistance to loose smut",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000267",
         "entityLabel": "soft grain texture",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000451",
         "entityLabel": "arsenic toxicity",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000463",
         "entityLabel": "heavy metal toxicity",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000553",
         "entityLabel": "resistance to Rhizoctonia solani",
         "entityPrefLabel": "resistance to Rhizoctonia root rot",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000143",
         "entityLabel": "endosperm texture",
         "entityPrefLabel": "grain texture",
         "count": "40",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000143",
         "entityLabel": "grain hardness",
         "entityPrefLabel": "grain texture",
         "count": "40",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000261",
         "entityLabel": "salinity adaptation",
         "entityPrefLabel": "salt tolerance",
         "count": "103",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000261",
         "entityLabel": "salinity resistance",
         "entityPrefLabel": "salt tolerance",
         "count": "103",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000561",
         "entityLabel": "stem rust resistance",
         "entityPrefLabel": "resistance to Stem rust",
-        "count": "117",
-        "source": "WTO"
+        "count": "118",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000078",
         "entityLabel": "final leaf number",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000369",
         "entityLabel": "winter-hardiness",
         "entityPrefLabel": "winter hardiness",
         "count": "7",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000554",
         "entityLabel": "resistance to Mycosphaerella graminicola",
         "entityPrefLabel": "resistance to Septoria leaf blotch",
         "count": "9",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000562",
         "entityLabel": "resistance to Puccinia striiformis",
         "entityPrefLabel": "resistance to Stripe rust",
         "count": "147",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000198",
         "entityLabel": "spikelet number",
         "count": "24",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000344",
         "entityLabel": "response to phophorus deficiency",
         "entityPrefLabel": "response to phophorus limitation",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000510",
         "entityLabel": "resistance to Gray Leaf Spot",
         "entityPrefLabel": "resistance to wheat blast",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000510",
         "entityLabel": "resistance to Pyricularia grisea",
         "entityPrefLabel": "resistance to wheat blast",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000073",
         "entityLabel": "heading time",
         "entityPrefLabel": "ear emergence time",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000586",
         "entityLabel": "gliadin content",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000296",
         "entityLabel": "resistance to aphids",
         "entityPrefLabel": "aphid resistance",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000222",
         "entityLabel": "flour color",
         "entityPrefLabel": "flour colour",
         "count": "8",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000259",
         "entityLabel": "drought tolerance",
         "entityPrefLabel": "response to water deficiency",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000029",
         "entityLabel": "lack of vernalization requirement",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000264",
         "entityLabel": " photoperiodic sensitivity",
         "entityPrefLabel": "sensitivity to photoperiod",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000308",
         "entityLabel": "dough extensibility",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000006",
         "entityLabel": "trait",
-        "count": "1",
-        "source": "WTO"
+        "count": "2",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000261",
         "entityLabel": "salt tolerance",
         "count": "103",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000071",
         "entityLabel": "grain yield",
         "entityPrefLabel": "crop yield",
-        "count": "285",
-        "source": "WTO"
+        "count": "288",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000143",
         "entityLabel": "kernel texture",
         "entityPrefLabel": "grain texture",
         "count": "40",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000261",
         "entityLabel": "salinity tolerance",
         "entityPrefLabel": "salt tolerance",
         "count": "103",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000561",
         "entityLabel": "resistance to black rust",
         "entityPrefLabel": "resistance to Stem rust",
-        "count": "117",
-        "source": "WTO"
+        "count": "118",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "disease resistance",
         "entityPrefLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000246",
         "entityLabel": "resistance to pathogens",
         "entityPrefLabel": "pathogen resistance",
         "count": "295",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000017",
         "entityLabel": "earliness at earing",
         "entityPrefLabel": "early heading",
         "count": "17",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000188",
         "entityLabel": "response to water stress",
         "count": "8",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000562",
         "entityLabel": "resistance to Stripe rust",
         "count": "147",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000596",
         "entityLabel": "DEPRECATED resistance to Fusarium spp.",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000095",
         "entityLabel": "nutrient limitation",
         "entityPrefLabel": "nutrient deficiency",
         "count": "14",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000326",
         "entityLabel": "heat resistance",
         "count": "97",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000179",
         "entityLabel": "PHS",
         "entityPrefLabel": "pre-harvest sprouting tolerance",
         "count": "27",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000216",
         "entityLabel": "cytoplasmic male sterility",
         "count": "11",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000073",
         "entityLabel": "ear emergence time",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000073",
         "entityLabel": "time of ear emergence",
         "entityPrefLabel": "ear emergence time",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000566",
         "entityLabel": "resistance to loose smut",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000321",
         "entityLabel": "frost resistance",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000495",
         "entityLabel": "resistance to CCN",
         "entityPrefLabel": "resistance to cereal cyst nematode",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000360",
         "entityLabel": "toxin resistance",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000264",
         "entityLabel": " photoperiod sensitivity",
         "entityPrefLabel": "sensitivity to photoperiod",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000145",
         "entityLabel": "grain number per ear",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000143",
         "entityLabel": "grain texture",
         "count": "40",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000551",
         "entityLabel": "resistance to Powdery mildew",
-        "count": "197",
-        "source": "WTO"
+        "count": "199",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000104",
         "entityLabel": "vernalization",
         "entityPrefLabel": "response to vernalization",
         "count": "8",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000304",
         "entityLabel": "cold hardiness",
         "entityPrefLabel": "cold resistance",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000450",
         "entityLabel": "Al toxicity",
         "entityPrefLabel": "aluminium toxicity",
         "count": "7",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Wheat Scab",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to scab crown rot",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "scab resistance",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000549",
         "entityLabel": "resistance to brown rust",
         "entityPrefLabel": "resistance to Leaf rust",
         "count": "189",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000017",
         "entityLabel": "early heading",
         "count": "17",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000340",
         "entityLabel": "fungal disease resistance",
         "entityPrefLabel": "resistance to a fungal pathogen",
-        "count": "17",
-        "source": "WTO"
+        "count": "18",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000554",
         "entityLabel": "resistance to Septoria leaf blotch",
         "count": "9",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000099",
         "entityLabel": "height",
         "entityPrefLabel": "plant height",
-        "count": "134",
-        "source": "WTO"
+        "count": "135",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000101",
         "entityLabel": "response to abiotic stress",
         "count": "44",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000344",
         "entityLabel": "rsponse to phosphate deficiency",
         "entityPrefLabel": "response to phophorus limitation",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000510",
         "entityLabel": "resistance to wheat blast",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000453",
         "entityLabel": "B toxicity",
         "entityPrefLabel": "boron toxicity",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000127",
         "entityLabel": "bread making quality",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000537",
         "entityLabel": "manganese toxicity",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000495",
         "entityLabel": "resistance to cereal cyst nematode",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000262",
         "entityLabel": "grain colour",
         "entityPrefLabel": "seed colour",
         "count": "6",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000531",
         "entityLabel": "cadmium toxicity",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000560",
         "entityLabel": "resistance to Septoria nodorum blotch",
         "entityPrefLabel": "resistance to Stagonospora nodorum",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000175",
         "entityLabel": "pest resistance",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000534",
         "entityLabel": "Cu toxicity",
         "entityPrefLabel": "copper toxicity",
         "count": "3",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000553",
         "entityLabel": "resistance to Rhizoctonia root rot",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000168",
         "entityLabel": "number of ear-bearing tillers at anthesis",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000568",
         "entityLabel": "resistance to wheat streak mosaic virus",
         "count": "7",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000590",
         "entityLabel": "high molecular weight glutenin subunit composition",
         "count": "29",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000304",
         "entityLabel": "cold-hardiness",
         "entityPrefLabel": "cold resistance",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to Fusarium",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000483",
         "entityLabel": "resistance to seedling blight",
         "entityPrefLabel": "resistance to Fusarium head blight",
-        "count": "124",
-        "source": "WTO"
+        "count": "125",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000549",
         "entityLabel": "resistance to Puccinia triticina",
         "entityPrefLabel": "resistance to Leaf rust",
         "count": "189",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000551",
         "entityLabel": "resistance to Blumeria graminis",
         "entityPrefLabel": "resistance to Powdery mildew",
-        "count": "197",
-        "source": "WTO"
+        "count": "199",
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000506",
         "entityLabel": "resistance to rust",
         "count": "124",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000562",
         "entityLabel": "resistance to Puccinia striiformis f. sp. tritici",
         "entityPrefLabel": "resistance to Stripe rust",
         "count": "147",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000344",
         "entityLabel": "response to phophorus limitation",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000583",
         "entityLabel": "gluten strength",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000510",
         "entityLabel": "resistance to Magnaporthe oryzae",
         "entityPrefLabel": "resistance to wheat blast",
         "count": "4",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000241",
         "entityLabel": "nitrogen limitation",
         "entityPrefLabel": "nitrogen deficiency",
         "count": "5",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000508",
         "entityLabel": "resistance to septoria",
         "count": "6",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000566",
         "entityLabel": "resistance to Ustilago nuda f. sp. tritici",
         "entityPrefLabel": "resistance to loose smut",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000231",
         "entityLabel": "hard grain texture",
         "count": "2",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000262",
         "entityLabel": "seed colour",
         "count": "6",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     },
     {
         "entityUri": "http://opendata.inrae.fr/wto/0000264",
         "entityLabel": "sensitivity to photoperiod",
         "count": "1",
-        "source": "WTO"
+        "source": "Phenotype or trait"
     }
 ]

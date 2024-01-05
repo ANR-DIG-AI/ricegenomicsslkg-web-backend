@@ -794,7 +794,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/8BF43756101118DA1DFCC8504BCD5DFF0E7BA74A",
         "entityLabel": "Rht-D1",
-        "count": "15",
+        "count": "16",
         "source": "Gene"
     },
     {
@@ -1340,6 +1340,12 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/AA56E00B2D5C001C58AC92D205603962A1047B42",
         "entityLabel": "WS1",
+        "count": "1",
+        "source": "Gene"
+    },
+    {
+        "entityUri": "http://ns.inria.fr/d2kab/gene/8454456C161E527214711FDB7454707AE766B242",
+        "entityLabel": "mlsy",
         "count": "1",
         "source": "Gene"
     },
@@ -2006,6 +2012,12 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/7CB77ADB0ADA3832E1FB87F48BD32396E638F38D",
         "entityLabel": "R464",
+        "count": "1",
+        "source": "Gene"
+    },
+    {
+        "entityUri": "http://ns.inria.fr/d2kab/gene/015BB22B3CE81468A7279E0698C918AAC5DE7414",
+        "entityLabel": "Tri4",
         "count": "1",
         "source": "Gene"
     },
@@ -2702,7 +2714,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/8FC71620C0775DD669D2E03D8A3771A5715A2CD5",
         "entityLabel": "Pm",
-        "count": "23",
+        "count": "24",
         "source": "Gene"
     },
     {
@@ -3278,7 +3290,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/A38402B30FF6F650E3E5B4A83C2554E3E1B198C2",
         "entityLabel": "Tri10",
-        "count": "1",
+        "count": "2",
         "source": "Gene"
     },
     {
@@ -3662,7 +3674,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/9DE9C0A1F5C8DB5DEC5E2AF212B52A40218EB944",
         "entityLabel": "Rht-B1",
-        "count": "22",
+        "count": "23",
         "source": "Gene"
     },
     {
@@ -4418,7 +4430,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/FAF9C9787EF37F22A8CD455716CE4B1586361072",
         "entityLabel": "Pm8",
-        "count": "7",
+        "count": "8",
         "source": "Gene"
     },
     {
@@ -4724,7 +4736,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/A7B3D5ED936C0078907C3B9A3D0EECF35333FBD5",
         "entityLabel": "M2",
-        "count": "14",
+        "count": "15",
         "source": "Gene"
     },
     {
@@ -4904,7 +4916,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/013245062405DBDB275F7B319D56BEED30BA11DE",
         "entityLabel": "Sr28",
-        "count": "3",
+        "count": "4",
         "source": "Gene"
     },
     {
@@ -5534,7 +5546,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/547D061C41A660C372AB99579A4258E0B2D36C93",
         "entityLabel": "Pm2",
-        "count": "17",
+        "count": "19",
         "source": "Gene"
     },
     {
@@ -5678,7 +5690,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/3BB3AB2F0C9E356EB1A808A8A0B23E75A8509251",
         "entityLabel": "Tri5",
-        "count": "13",
+        "count": "14",
         "source": "Gene"
     },
     {
@@ -5702,7 +5714,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/53A401C4CFBFF3CF6CE1690CAB1D08EE658972A5",
         "entityLabel": "Tri",
-        "count": "6",
+        "count": "7",
         "source": "Gene"
     },
     {
@@ -6726,6 +6738,12 @@
         "source": "Gene"
     },
     {
+        "entityUri": "http://ns.inria.fr/d2kab/gene/B581451803ED471EBB1E1198DEA679BF2EED5FD5",
+        "entityLabel": "mljy",
+        "count": "1",
+        "source": "Gene"
+    },
+    {
         "entityUri": "http://ns.inria.fr/d2kab/gene/5EF97BFD3AE0ED6292657586BC37B219E451D94A",
         "entityLabel": "Lr10",
         "count": "45",
@@ -6788,7 +6806,7 @@
     {
         "entityUri": "http://ns.inria.fr/d2kab/gene/C84BE9A3A7DCD28AE01EE25ECC71976931255DB9",
         "entityLabel": "Rht",
-        "count": "49",
+        "count": "50",
         "source": "Gene"
     },
     {

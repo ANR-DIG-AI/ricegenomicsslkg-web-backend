@@ -25,20 +25,23 @@ def concatenate_json_files(file_paths, output_folder, output_file):
     print(f"JSON files concatenated and saved to {output_path}")
 
 
+
 if __name__ == "__main__":
 
     # Replace the path
-    path = 'data'
+    path = '../data'
 
     # List of corrected file names
-    file_names = ['dumpEntitiesGeneVariety.json',
-                  'dumpEntitiesNCBITaxon.json', 'dumpEntitiesWTO.json']
+    file_names = [
+        'dumpEntitiesGeneVariety.json',
+        'dumpEntitiesNCBITaxon.json',
+        'dumpEntitiesWTO.json'
+    ]
 
     # Constructing absolute paths using os.path.join()
     input_files = [os.path.join(path, file_name) for file_name in file_names]
 
     # Specify the destination folder and the output file name
-    destination_folder = 'data'
     output_file = 'dumpEntities.json'
 
-    concatenate_json_files(input_files, destination_folder, output_file)
+    concatenate_json_files(input_files, path, output_file)

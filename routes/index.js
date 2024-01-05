@@ -354,10 +354,10 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
 
             let query;
             switch (_source) {
-                case "NCBITaxon":
+                case "Taxon":
                     query = readTemplate("searchArticleSubConceptNCBI.sparql", _uri);
                     break;
-                case "WTO":
+                case "Phenotype or trait":
                     query = readTemplate("searchArticleSubConceptWTO.sparql", _uri);
                     break;
                 default:
