@@ -6,7 +6,7 @@ require('dotenv').config();
 
 let log = logger.application;
 let router = express.Router();
-let agrovoc = require('../data/dumpAgrovocEntities.json')
+let entitiesJson = require('../data/dumpEntities.json')
 
 log.info('Starting up backend services');
 
@@ -60,22 +60,18 @@ function splitDollar(str) {
 /**
  * Get article metaData (title , date , articleType ... )  without the authors
  * @param {string} uri - URI of the document
- * @return {document} - The outputis shaped as in the example below:
+ * @return {document} - The output is shaped as in the example below:
  * {
  *   "result": [
  *     {
- *       "title": "Assessment of municipal opened landfill and its impact on environmental and human health in central Thailand",
- *       "date": "2019",
- *       "pub": "International Journal of Infectious Diseases",
- *       "license": "https://creativecommons.org/licenses/by/4.0/",
- *       "doi": "10.1016/j.ijid.2018.11.146",
- *       "source": "Agritrop-OAI2-API",
- *       "url": "http://agritrop.cirad.fr/592919/",
+ *       "title": "Ectopic expression of alpha B-crystallin in Chinese hamster ovary cells suggests a nuclear role for this protein.",
+ *       "date": "1999",
+ *       "pub": "European journal of cell biology",
  *       "lang": "eng",
- *       "lang2": "http://id.loc.gov/vocabulary/iso639-1/en",
- *       "abs": "abstract...",
- *       "linkPDF": "http://agritrop.cirad.fr/592919/1/PIIS1201971218347258.pdf"
- * }]}
+ *       "abs": "alpha B-crystallin (alpha B) is known to be a cytosolic..."
+ *     }
+ *   ]
+ * }
  */
 router.get('/getArticleMetadata/', (req, res) => {
     let articleUri = req.query.uri;
@@ -108,6 +104,18 @@ router.get('/getArticleMetadata/', (req, res) => {
 /**
  * GET article authors
  * @param {string} uri - URI of the document
+ * @return {document} - The output is shaped as in the example below:
+ * {
+ *   "result": [
+ *     {
+ *       "authors": "Hale IL"
+ *     },
+ *     {
+ *       "authors": "Bhat SP"
+ *     }
+ *     ...
+ *   ]
+ * }
  */
 router.get('/getArticleAuthors/', (req, res) => {
     let articleUri = req.query.uri;
@@ -144,7 +152,6 @@ router.get('/getArticleAuthors/', (req, res) => {
 router.get('/getAbstractNamedEntities/', (req, res) => {
     let articleUri = req.query.uri;
     log.info('getAbstractNamedEntities - uri: ' + articleUri);
-    articleUri = articleUri + "#abstract";
     let query = readTemplate("getNamedEntities.sparql", articleUri);
     if (log.isDebugEnabled()) {
         log.debug('getNamedEntities - Will submit SPARQL query: \n' + query);
@@ -171,72 +178,7 @@ router.get('/getAbstractNamedEntities/', (req, res) => {
 
 
 /**
- * Get the geographical named entities whatever the article part
- * @param {string} uri - URI of the document
- */
-router.get('/getGeographicNamedEntities/', (req, res) => {
-    let articleUri = req.query.uri;
-    log.info('getGeographicNamedEntities - uri: ' + articleUri);
-    let query = readTemplate("getGeographicNamedEntities.sparql", articleUri);
-    if (log.isDebugEnabled()) {
-        log.debug('getGeographicNamedEntities - Will submit SPARQL query: \n' + query);
-    }
-
-    (async () => {
-        let result;
-        let opts = {method: 'POST'};
-        try {
-            result = await d3.sparql(process.env.SEMANTIC_INDEX_SPARQL_ENDPOINT, query, opts).then((data) => {
-                if (log.isTraceEnabled()) {
-                    log.trace('getGeographicalNamedEntities - SPARQL response: ');
-                    data.forEach(res => log.trace(res));
-                }
-                return data;
-            }).then(res => res);
-
-        } catch (err) {
-            log.error('getGeographicalNamedEntities error: ' + err);
-            result = err;
-        }
-        res.status(200).json({result});
-    })()
-});
-
-
-/**
- * Get global descriptors : The global descriptors are concepts characterizing the article as a whole
- * @param {string} uri - URI of the document
- */
-router.get('/getArticleDescriptors/', (req, res) => {
-    let articleUri = req.query.uri;
-    log.info('getArticleDescriptors - uri: ' + articleUri);
-    let query = readTemplate("getArticleDescriptors.sparql", articleUri);
-    if (log.isDebugEnabled()) {
-        log.debug('getArticleDescriptors - Will submit SPARQL query: \n' + query);
-    }
-
-    (async () => {
-        let result;
-        try {
-            result = await d3.sparql(process.env.SEMANTIC_INDEX_SPARQL_ENDPOINT, query).then((data) => {
-                if (log.isTraceEnabled()) {
-                    log.trace('getArticleDescriptors - SPARQL response: ');
-                    data.forEach(res => log.trace(res));
-                }
-                return data;
-            }).then(res => res);
-
-        } catch (err) {
-            log.error('getArticleDescriptors error: ' + err);
-            result = err;
-        }
-        res.status(200).json({result});
-    })()
-});
-
-
-/**
- * Complete the user's input using Agrovoc labels.
+ * Complete the user's input using entities labels.
  *
  * @param {string} input - first characters entered by the use
  * @return {document} - The output is a JSON array whose documents are shaped as in the example below:
@@ -247,19 +189,19 @@ router.get('/getArticleDescriptors/', (req, res) => {
  *         "count": "1"
  *     }
  * entityPrefLabel is optional, it gives the preferred label in case entityLabel is not the preferred label.
- * "Count" is the number of documents in the knowledge base that are assigned the descriptor with this URI/label.
+ * "Count" is the number of documents in the knowledge base that are assigned the named entity with this URI/label.
  */
-router.get('/autoCompleteAgrovoc/', (req, res) => {
+router.get('/autoComplete/', (req, res) => {
     let input = req.query.input.toLowerCase();
     if (log.isDebugEnabled()) {
-        log.debug('autoCompleteAgrovoc - input: ' + input);
+        log.debug('autoComplete - input: ' + input);
     }
 
     // Count the number of entities selected (to return ony a maximum number)
     let _count = 0;
 
     // Search for entities whose label starts like the input
-    let _startsWith = agrovoc.filter(_entity => {
+    let _startsWith = entitiesJson.filter(_entity => {
         if (_count < process.env.SEARCH_MAX_AUTOCOMPLETE) {
             if (_entity.entityLabel.toLowerCase().startsWith(input)) {
                 _count++;
@@ -269,11 +211,11 @@ router.get('/autoCompleteAgrovoc/', (req, res) => {
     }).sort(sortStrings);
 
     if (log.isTraceEnabled()) {
-        log.trace('autoCompleteAgrovoc - Result _startsWith: ');
+        log.trace('autoComplete - Result _startsWith: ');
         _startsWith.forEach(res => log.trace(res));
     }
 
-    let _includes = agrovoc.filter(_entity => {
+    let _includes = entitiesJson.filter(_entity => {
         if (_count < process.env.SEARCH_MAX_AUTOCOMPLETE) {
             let _entityLabLow = _entity.entityLabel.toLowerCase()
 
@@ -287,7 +229,7 @@ router.get('/autoCompleteAgrovoc/', (req, res) => {
     }).sort(sortStrings);
 
     if (log.isTraceEnabled()) {
-        log.trace('autoCompleteAgrovoc - Result includes: ');
+        log.trace('autoComplete - Result includes: ');
         _includes.forEach(res => log.trace(res));
     }
 
@@ -296,8 +238,8 @@ router.get('/autoCompleteAgrovoc/', (req, res) => {
 
 
 /**
- * Search for documents annotated with a set of descriptors given by their URIs
- * @param {string} uri - URIs of the descriptors to search, passed on the query string either as "uri=a,b,..." or "uri=a&uri=b&..."
+ * Search for documents annotated with a set of named entities  given by their URIs
+ * @param {string} uri - URIs of the named entities to search, passed on the query string either as "uri=a,b,..." or "uri=a&uri=b&..."
  * @return {document} - output like this:
  * {
  *   "result": [
@@ -305,9 +247,6 @@ router.get('/autoCompleteAgrovoc/', (req, res) => {
  *       "document": "http://data-issa.cirad.fr/document/585171",
  *       "title": "The endless palm oil debate: Science-based solutions beyond controversies",
  *       "date": "2017",
- *       "publisher": "Modern Nutrition Today",
- *       "lang": "eng",
- *       "linkPDF": "http://agritrop.cirad.fr/585171/1/Rival%20_ModernNutritionToday%20_02_2017_engl.pdf",
  *       "authors": [
  *         "Alain Rival", "X Y"
  *       ]
@@ -315,49 +254,52 @@ router.get('/autoCompleteAgrovoc/', (req, res) => {
  *     ...
  * }
  */
-router.get('/searchDocumentsByDescriptor/', (req, res) => {
+router.get('/searchDocuments/', (req, res) => {
     let uri = req.query.uri;
-    log.info('searchDocumentsByDescriptor - uri: [' + uri + ']');
+    log.info('searchDocuments - uri: [' + uri + ']');
 
     if (uri.length === 0) {
-        log.info('searchDocumentsByDescriptor - no parameter, returning empty SPARQL response');
+        log.info('searchDocuments - no parameter, returning empty SPARQL response');
         res.status(200).json({result: []});
     } else {
 
         // Create the SPARQL triple patterns to match each one of the URIs
         let lines = '';
-        let lineTpl = '    ?document ^oa:hasTarget [ oa:hasBody <{uri}> ].';
+        let i = 0;
+
         let uris = uri.split(',');
         uris.forEach(_uri => {
+            let lineTpl = '?annotation' + i + ' oa:hasBody <{uri}>; oa:hasTarget [ oa:hasSource ?articleUriAbstract' + i + ' ] .?articleUriAbstract' + i + ' frbr:partOf+ ?document.';
             lines += lineTpl.replaceAll("{uri}", _uri) + '\n';
+            i = i + 1;
         })
 
         // Insert the triple patterns into the SPARQL query
-        let queryTpl = fs.readFileSync('queries/searchArticleByDescriptor.sparql', 'utf8');
+        let queryTpl = fs.readFileSync('queries/searchArticle.sparql', 'utf8');
         let query = queryTpl.replace("{triples}", lines);
         if (log.isDebugEnabled()) {
-            log.debug('searchDocumentsByDescriptor - Will submit SPARQL query: \n' + query);
+            log.debug('searchDocuments - Will submit SPARQL query: \n' + query);
         }
 
         (async () => {
             let result = [];
             try {
                 result = await d3.sparql(process.env.SEMANTIC_INDEX_SPARQL_ENDPOINT, query).then((data) => {
-                    log.info('searchDocumentsByDescriptor returned ' + data.length + ' results');
+                    log.info('searchDocuments returned ' + data.length + ' results');
                     // Turn string authors into an array
                     data = data.map(_r => {
                         _r.authors = _r.authors.split('$');
                         return _r;
                     });
                     if (log.isTraceEnabled()) {
-                        log.trace('searchDocumentsByDescriptor - SPARQL response: ');
+                        log.trace('searchDocuments - SPARQL response: ');
                         data.forEach(res => log.trace(res));
                     }
                     return data;
                 }).then(res => res);
 
             } catch (err) {
-                log.error('searchDocumentsByDescriptor error: ' + err);
+                log.error('searchDocuments error: ' + err);
                 result = err;
             }
             res.status(200).json({result: result});
@@ -367,9 +309,9 @@ router.get('/searchDocumentsByDescriptor/', (req, res) => {
 
 
 /**
- * Search for the documents that are annotated with a set of Agrovoc concepts {id} or any of their sub-concepts.
+ * Search for the documents that are annotated with a set of named entities {id} or any of their sub-concepts/sub-classes.
  *
- * @param {string} uri - URIs of the descriptors to search, passed on the query string either as "uri=a,b,..." or "uri=a&uri=b&..."
+ * @param {string} uri - URIs of the named entities to search, passed on the query string either as "uri=a,b,..." or "uri=a&uri=b&..."
  * @return {document} - output like this:
  *
  * {
@@ -378,9 +320,6 @@ router.get('/searchDocumentsByDescriptor/', (req, res) => {
  *       "document": "http://data-issa.cirad.fr/document/601515",
  *       "title": "Transformation of coffee-growing across Latin America",
  *       "date": "2022",
- *       "publisher": "En transition vers un monde viable",
- *       "lang": "eng",
- *       "linkPDF": "http://agritrop.cirad.fr/601515/1/vivian.pdf",
  *       "authors": [
  *         "Armbrecht, Inge", "Avelino, Jacques", "Barrera, Juan Francisco"
  *       ],
@@ -394,12 +333,12 @@ router.get('/searchDocumentsByDescriptor/', (req, res) => {
  *     ...
  * }
  */
-router.get('/searchDocumentsByDescriptorSubConcept/', (req, res) => {
+router.get('/searchDocumentsSubConcept/', async (req, res) => {
     let uri = req.query.uri;
-    log.info('searchDocumentsByDescriptorSubConcept - uri: [' + uri + ']');
+    log.info('searchDocumentsSubConcept - uri: [' + uri + ']');
 
     if (uri.length === 0) {
-        log.info('searchDocumentsByDescriptorSubConcept - no parameter, returning empty response');
+        log.info('searchDocumentsSubConcept - no parameter, returning empty response');
         res.status(200).json({result: []});
     } else {
 
@@ -407,27 +346,47 @@ router.get('/searchDocumentsByDescriptorSubConcept/', (req, res) => {
         let uris = uri.split(',');
         let promises = [];
         uris.forEach(_uri => {
-            let query = readTemplate("searchArticleByDescriptorSubConcept.sparql", _uri);
+            // Get the source KG of the current _uri from the list of entities (dumpEntities.json)
+            let _source = getSourceFromJson(_uri);
             if (log.isDebugEnabled()) {
-                log.debug('searchDocumentsByDescriptorSubConcept - Will submit SPARQL query: \n' + query);
+                log.debug(`searchDocumentsSubConcept - Source for uri ${_uri}: ${_source}`);
             }
 
-            // Submit the SPARQL query and save the promise
-            let _promise = (async () => {
-                let _result = [];
-                try {
-                    _result = await d3.sparql(process.env.SEMANTIC_INDEX_SPARQL_ENDPOINT, query).then((data) => {
-                        log.info('searchDocumentsByDescriptorSubConcept: query for uri ' + _uri + ' returned ' + data.length + ' results');
-                        return data;
-                    }).then(res => res);
-                } catch (err) {
-                    log.error('searchDocumentsByDescriptorSubConcept error: ' + err);
-                    _result = err;
+            let query;
+            switch (_source) {
+                case "NCBITaxon":
+                    query = readTemplate("searchArticleSubConceptNCBI.sparql", _uri);
+                    break;
+                case "WTO":
+                    query = readTemplate("searchArticleSubConceptWTO.sparql", _uri);
+                    break;
+                default:
+                    log.error(`searchDocumentsSubConcept - Unknown source for uri ${_uri}: ${_source}`);
+                    query = '';
+            }
+
+            if (query !== '') {
+                if (log.isDebugEnabled()) {
+                    log.debug('searchDocumentsSubConcept - Will submit SPARQL query: \n' + query);
                 }
-                return _result;
-            })();
-            promises.push(_promise);
-        })
+
+                // Submit the SPARQL query and save the promise
+                let _promise = (async () => {
+                    let _result = [];
+                    try {
+                        _result = await d3.sparql(process.env.SEMANTIC_INDEX_SPARQL_ENDPOINT, query).then((data) => {
+                            log.info('searchDocumentsSubConcept: query for uri ' + _uri + ' returned ' + data.length + ' results');
+                            return data;
+                        }).then(res => res);
+                    } catch (err) {
+                        log.error('searchDocumentsSubConcept error: ' + err);
+                        _result = err;
+                    }
+                    return _result;
+                })();
+                promises.push(_promise);
+            }
+        });
 
         // Wait for all the responses (promises) and compute the intersection of all of them based on the document URIs
         let joinedResults = [];
@@ -462,9 +421,9 @@ router.get('/searchDocumentsByDescriptorSubConcept/', (req, res) => {
                         return _r;
                     });
                 }
-                log.info("searchDocumentsByDescriptorSubConcept: current number of results : " + joinedResults.length);
+                log.info("searchDocumentsSubConcept: current number of results : " + joinedResults.length);
             });
-            log.info("searchDocumentsByDescriptorSubConcept: returning : " + joinedResults.length + " results");
+            log.info("searchDocumentsSubConcept: returning : " + joinedResults.length + " results");
             res.status(200).json({"result": joinedResults});
         });
     }
@@ -472,111 +431,18 @@ router.get('/searchDocumentsByDescriptorSubConcept/', (req, res) => {
 
 
 /**
- * Search for documents that are annotated with a set of Agrovoc concepts {id} or any related concept or any concept related to their sub-concepts.
- *
- * @param {string} uri - URIs of the descriptor to search, passed on the query string either as "uri=a,b,..." or "uri=a&uri=b&..."
- * @return {document} - output like this:
- *
- * {
- *   "result": [
- *     {
- *       "document": "http://data-issa.cirad.fr/document/601515",
- *       "title": "Transformation of coffee-growing across Latin America",
- *       "date": "2022",
- *       "publisher": "En transition vers un monde viable",
- *       "lang": "eng",
- *       "linkPDF": "http://agritrop.cirad.fr/601515/1/vivian.pdf",
- *       "authors": [
- *         "Armbrecht, Inge", "Avelino, Jacques", "Barrera, Juan Francisco"
- *       ],
- *       "matchedEntities": [{
- *           "entityUri": "http://aims.fao.org/aos/agrovoc/c_33561",
- *           "entityLabel": "sustainable agriculture"
- *         },
- *         ...
- *       ]
- *     },
- *     ...
- * }
+ * Get the name of the source KG of one entity (given by its URI) from the list of entities (dumpEntities.json)
+ * @param uri
+ * @return {*|string|string}
  */
-router.get('/searchDocumentsByDescriptorRelated/', (req, res) => {
-    let uri = req.query.uri;
-    if (log.isInfoEnabled()) {
-        log.info('searchDocumentsByDescriptorRelated - uri: [' + uri + ']');
+function getSourceFromJson(uri) {
+    try {
+        let entityData = entitiesJson.find(_entry => uri.includes(_entry.entityUri));
+        return entityData ? entityData.source : "Unknown";
+    } catch (err) {
+        console.error('Error reading dumpEntities.json: ' + err);
+        return "Unknown";
     }
-
-    if (uri.length === 0) {
-        if (log.isInfoEnabled()) {
-            log.info('searchDocumentsByDescriptorRelated - no parameter, returning empty response');
-        }
-        res.status(200).json({result: []});
-    } else {
-
-        // Submit one SPARQL query for each URI
-        let uris = uri.split(',');
-        let promises = [];
-        uris.forEach(_uri => {
-            // Insert the triple patterns into the SPARQL query
-            let query = readTemplate("searchArticleByDescriptorRelated.sparql", _uri);
-            if (log.isDebugEnabled()) {
-                log.debug('searchDocumentsByDescriptorRelated - Will submit SPARQL query: \n' + query);
-            }
-
-            // Submit the SPARQL query and save the promise
-            let _promise = (async () => {
-                let _result = [];
-                try {
-                    _result = await d3.sparql(process.env.SEMANTIC_INDEX_SPARQL_ENDPOINT, query).then((data) => {
-                        log.info('searchDocumentsByDescriptorRelated: query for uri ' + _uri + ' returned ' + data.length + ' results');
-                        return data;
-                    }).then(res => res);
-                } catch (err) {
-                    log.error('searchDocumentsByDescriptorRelated error: ' + err);
-                    _result = err;
-                }
-                return _result;
-            })();
-            promises.push(_promise);
-        })
-
-        // Wait for all the responses (promises) and compute the intersection of all of them based on the document URIs
-        let joinedResults = [];
-        Promise.allSettled(promises).then((_promises) => {
-            _promises.forEach((_promise, index) => {
-                if (index === 0) {
-                    // First promise: initialize the intersection with the first set of results
-                    joinedResults = _promise.value.map(_r => {
-                        // Turn string matchedEntities into an array
-                        _r.matchedEntities = splitDollar(_r.matchedEntities);
-
-                        // Turn string authors into an array
-                        _r.authors = _r.authors.split('$');
-
-                        return _r;
-                    });
-                } else {
-                    // Remove, from the current intersection, the documents that are not mentioned in the results of the current promise
-                    joinedResults = joinedResults.filter(_r => _promise.value.some(_n => _n.document === _r.document));
-
-                    // Join the matched entities of each result in the current intersection with
-                    // the matched entities of the corresponding result of the current promise
-                    joinedResults = joinedResults.map(_r => {
-                        let newResult = _promise.value.find(_n => _n.document === _r.document);
-                        let _matchedEntitiesAr = splitDollar(newResult.matchedEntities);
-                        _matchedEntitiesAr.forEach(_e => {
-                            if (!_r.matchedEntities.some(_me => _me.entityUri === _e.entityUri))
-                                _r.matchedEntities.push(_e);
-                        });
-                        return _r;
-                    });
-                }
-                log.info("searchDocumentsByDescriptorRelated: current number of results : " + joinedResults.length);
-            });
-            log.info("searchDocumentsByDescriptorRelated: returning : " + joinedResults.length + " results");
-            res.status(200).json({"result": joinedResults});
-        });
-    }
-});
-
+}
 
 module.exports = router;

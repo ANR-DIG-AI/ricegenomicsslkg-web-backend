@@ -1,16 +1,18 @@
-# ISSA Web Application Backend Services
+# WheatGenomicsSLKG Web Application Backend Services
 
-The [ISSA project](https://issa.cirad.fr/) focuses on the semantic indexing of scientific publications in an open archive.
+The [Wheat Genomics Scientific Literature KG](https://github.com/Wimmics/WheatGenomicsSLKG) (WheatGenomicsSLKG) is a FAIR knowledge graph that exploits 
+the Semantic Web technologies to integrate information about Named Entities (NE) extracted automatically from a corpus of 
+PubMed scientific articles on wheat genetics and genomics.
 
-This repository is the backend part of a web application that demonstrates the interest and use of such a semantic index for researchers and librarians.
-It provides a set of Web APIs (services) used by the frontend application  available in the [visualization repository](https://github.com/issa-project/visualization).
+This repository is the backend part of a web application that demonstrates the interest and leveraging rich knowledge references.
+It provides a set of Web APIs (services) used by the frontend application available in the [visualization repository](https://github.com/wimmics/d2kab-web-visualization).
 
 
-### Services
+## Services
 
 The services exposed by the server are defined in [routes/index.js](routes/index.js).
 
-With the exception of service `autoCompleteAgrovoc`, the services submit SPARQL SELECT [queries](queries) to the ISSA SPARQL endpoint (property SEMANTIC_INDEX_SPARQL_ENDPOINT in [.env](.env))
+With the exception of service `autoComplete`, the services submit SPARQL SELECT [queries](queries) to the D2kAB SPARQL endpoint (property SEMANTIC_INDEX_SPARQL_ENDPOINT in [.env](.env))
 using the d3-sparql library.
 The response of the services is the output of the d3-sparql library itself, that only returns the "results.bindings" part
 of the SPARQL response in JSON format, following this format:
@@ -44,11 +46,16 @@ Run the application: ` yarn start`
 
 By default, the node.js server listens on port 3000. This can be changed in file [.env](.env).
 
-Make sure the server is properly started by pointing your browser to:
+Make sure the server is properly started and test the services by pointing your browser to:
 ```
-http://localhost:3000/getArticleMetadata?uri=http://data-issa.cirad.fr/document/592919
+http://localhost:3000/getArticleMetadata/?uri=https://pubmed.ncbi.nlm.nih.gov/10099937
+http://localhost:3000/getArticleAuthors/?uri=https://pubmed.ncbi.nlm.nih.gov/10099937
+http://localhost:3000/getAbstractNamedEntities/?uri=https://pubmed.ncbi.nlm.nih.gov/10099937
+http://localhost:3000/autoComplete/?input=aestivum
+http://localhost:3000/searchDocuments/?uri=http://purl.obolibrary.org/obo/NCBITaxon_4565
+http://localhost:3000/searchDocumentsSubConcept/?uri=http://purl.obolibrary.org/obo/NCBITaxon_4565
 ```
-(this is an example article URI that may no longer be valid at some point).
+In the `get*` services, uri is an example article URI that may no longer exist in the database at some point.
 
 
 ### Logging
@@ -60,18 +67,3 @@ Refer to the [Log4JS documentation](https://stritti.github.io/log4js/).
 
 
 
-## License
-
-See the [LICENSE file](LICENSE).
-
-
-## Cite this work
-
-Franck MICHEL, Youssef MEKOUAR, ISSA Project (2023). ISSA Web Application Backend Services. https://github.com/issa-project/web-backend/.
-
-
-## Publications
-
-ISSA: Generic Pipeline, Knowledge Model and Visualization tools to Help Scientists Search and Make Sense of a Scientific Archive.
-Anne Toulet, Franck Michel, Anna Bobasheva, Aline Menin, Sébastien Dupré, Marie-Claude Deboin, Marco Winckler, Andon Tchechmedjiev.
-_21st International Semantic Web Conference (ISWC)_, Oct 2022, Hangzhou, China. DOI: [⟨10.1007/978-3-031-19433-7_38⟩](https://dx.doi.org/10.1007/978-3-031-19433-7_38). [HAL](https://hal.science/hal-03807744)

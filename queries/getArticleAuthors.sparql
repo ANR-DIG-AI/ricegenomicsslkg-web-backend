@@ -1,11 +1,8 @@
-PREFIX bibo:   <http://purl.org/ontology/bibo/>
-PREFIX dce:    <http://purl.org/dc/elements/1.1/>
-PREFIX prov:   <http://www.w3.org/ns/prov#>
+PREFIX dct:    <http://purl.org/dc/terms/>
 
 SELECT ?authors
-FROM <http://data-issa.cirad.fr/graph/documents>
+FROM <http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg>
 WHERE {
     <{id}>
-        a prov:Entity;
-        dce:creator ?authors.
+        dct:creator ?authors.
 }

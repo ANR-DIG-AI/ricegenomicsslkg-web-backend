@@ -1,0 +1,20 @@
+PREFIX dct:    <http://purl.org/dc/terms/>
+prefix fabio:  <http://purl.org/spar/fabio/>
+prefix frbr:   <http://purl.org/vocab/frbr/core#>
+PREFIX oa:     <http://www.w3.org/ns/oa#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?document ?title ?date ?publisher ?lang (group_concat(distinct ?author, "$") as ?authors)
+
+FROM <http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg>
+WHERE {
+    ?document a fabio:ResearchPaper.
+    OPTIONAL { ?document dct:title ?title. FILTER isLiteral(?title) }
+    OPTIONAL { ?document dct:creator ?author. }
+    OPTIONAL { ?document dct:issued ?date. }
+    OPTIONAL { ?document dct:source ?publisher. }
+    OPTIONAL { ?document dct:language ?lang. }
+
+    {triples}
+
+} group by ?document ?title ?date ?publisher ?lang limit 20000

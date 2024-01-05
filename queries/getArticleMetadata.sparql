@@ -1,28 +1,18 @@
-PREFIX bibo:   <http://purl.org/ontology/bibo/>
-PREFIX dct:    <http://purl.org/dc/terms/>
-PREFIX dce:    <http://purl.org/dc/elements/1.1/>
-PREFIX fabio:  <http://purl.org/spar/fabio/>
-PREFIX prov:   <http://www.w3.org/ns/prov#>
-PREFIX schema: <http://schema.org/>
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX frbr:    <http://purl.org/vocab/frbr/core#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT *
-FROM <http://data-issa.cirad.fr/graph/documents>
-FROM <http://data-issa.cirad.fr/graph/documents/text>
+SELECT ?title ?date ?pub ?lang ?abs
+FROM <http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg>
 WHERE {
-    <{id}> a prov:Entity.
-
-    OPTIONAL { <{id}> dct:title ?title.}
-    OPTIONAL { <{id}> dct:issued ?date.}
-    OPTIONAL { <{id}> schema:publication ?pub.}
-    OPTIONAL { <{id}> dct:license ?license.}
-    OPTIONAL { <{id}> dct:rights ?rights.}
-    OPTIONAL { <{id}> bibo:doi ?doi.}
-    OPTIONAL { <{id}> bibo:pmid ?pmid.}
-    OPTIONAL { <{id}> fabio:hasPubMedId ?hasPubMedId.}
-    OPTIONAL { <{id}> dct:source ?source.}
-    OPTIONAL { <{id}> schema:url ?url.}
-    OPTIONAL { <{id}> dce:language ?lang.}
-    OPTIONAL { <{id}> dct:language ?lang2.}
-    OPTIONAL { <{id}> dct:abstract [rdf:value ?abs].}
-    OPTIONAL { <{id}> schema:downloadUrl ?linkPDF. }
+    OPTIONAL { <{id}> dct:title ?title. FILTER isLiteral(?title) }
+    OPTIONAL { <{id}> dct:issued ?date. }
+    OPTIONAL { <{id}> dct:source ?pub. }
+    OPTIONAL { <{id}> dct:language ?lang. }
+    OPTIONAL {
+        <{id}> dct:abstract ?abstract.
+        ?abstracttxt
+            frbr:partOf ?abstract;
+            rdf:value ?abs.
+    }
 }

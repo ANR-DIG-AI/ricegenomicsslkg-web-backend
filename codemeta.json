@@ -2,20 +2,18 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "license": "https://spdx.org/licenses/Apache-2.0",
-  "codeRepository": "https://github.com/issa-project/web-backend",
-  "datePublished": "2022-05-01",
-  "dateModified": "2023-10-04",
-  "issueTracker": "https://github.com/issa-project/web-backend/issues",
-  "name": "ISSA Web Application Backend Services",
-  "version": "1.1",
-  "description": "The ISSA project (https://issa.cirad.fr/) focuses on the semantic indexing of scientific publications in an open archive. This project is the backend part of a web application that demonstrates the interest and use of such a semantic index for researchers and librarians. It provides a set of Web APIs (services) used by the frontend application.",
-  "funding": "ISSA project",
+  "codeRepository": "https://github.com/Wimmics/wheatgenomicsslkg-web-backend",
+  "datePublished": "2024-01-05",
+  "issueTracker": "https://github.com/Wimmics/wheatgenomicsslkg-web-backend/issues",
+  "name": "WheatGenomicsSLKG Web Application Backend Services",
+  "version": "1.0",
+  "description": "This repository is the backend part of a web application meant to search articles in the WheatGenomicsSLKG and provide a visualization of their metadata.",
+  "funding": "D2KAB project",
   "developmentStatus": "active",
-  "referencePublication": "https://hal.science/hal-03807744",
-  "isPartOf": "https://issa.cirad.fr/",
+  "isPartOf": "https://www.d2kab.org",
   "funder": {
-    "@type": "Organization",
-    "name": "ISSA, research infrastructure CollEx-Persée"
+    "@type": "Project",
+    "name": "D2KAB"
   },
   "keywords": [
     "web API",
@@ -23,7 +21,7 @@
     "information retrieval",
     "semantic search",
     "scientific literature",
-    "node"
+    "wheat genomics"
   ],
   "programmingLanguage": [
     "Javascript"
@@ -34,7 +32,7 @@
   "softwareRequirements": [
     "node.js 17+",
     "yarn",
-    "https://github.com/issa-project/web-backend/blob/master/package.json"
+    "https://github.com/Wimmics/wheatgenomicsslkg-web-backend/blob/master/package.json"
   ],
   "author": [
     {
@@ -46,15 +44,6 @@
       "affiliation": {
         "@type": "Organization",
         "name": "University Côte d'Azur, CNRS, Inria"
-      }
-    },
-    {
-      "@type": "Person",
-      "givenName": "Youssef",
-      "familyName": "Mekouar",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "University Côte d'Azur"
       }
     }
   ]

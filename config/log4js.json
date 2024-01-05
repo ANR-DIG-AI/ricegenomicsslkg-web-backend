@@ -30,7 +30,7 @@
       "appenders": [
         "file", "out"
       ],
-      "level": "INFO"
+      "level": "DEBUG"
     }
   }
 }

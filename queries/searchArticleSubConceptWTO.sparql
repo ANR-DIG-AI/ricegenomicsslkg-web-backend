@@ -1,0 +1,30 @@
+PREFIX dct:     <http://purl.org/dc/terms/>
+prefix fabio:  <http://purl.org/spar/fabio/>
+prefix frbr:    <http://purl.org/vocab/frbr/core#>
+PREFIX oa:      <http://www.w3.org/ns/oa#>
+prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix skos:    <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?document ?title ?date ?publisher ?lang (group_concat(distinct ?author, "$") as ?authors) (group_concat(distinct ?matchedEntity, "$$") as ?matchedEntities)
+FROM <http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg>
+From <http://ns.inria.fr/d2kab/ontology/wto/v3>
+WHERE {
+    ?document a fabio:ResearchPaper.
+    OPTIONAL { ?document dct:title ?title. FILTER isLiteral(?title) }
+    OPTIONAL { ?document dct:creator ?author. }
+    OPTIONAL { ?document dct:issued ?date. }
+    OPTIONAL { ?document dct:source ?publisher. }
+    OPTIONAL { ?document dct:language ?lang. }
+
+    ?a1 oa:hasTarget [ oa:hasSource ?source ];
+        oa:hasBody ?entityUri.
+    ?source frbr:partOf+ ?document.
+
+    { ?entityUri rdfs:subClassOf* <{id}>; rdfs:label ?entityLabel. }
+    union
+    { ?entityUri rdf:type/rdfs:subClassOf* <{id}>; skos:prefLabel ?entityLabel. }
+
+    BIND(concat(?entityUri, '$', ?entityLabel) as ?matchedEntity)
+
+} group by ?document ?title ?date ?publisher ?lang limit 20000

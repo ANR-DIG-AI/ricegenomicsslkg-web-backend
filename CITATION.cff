@@ -2,7 +2,7 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: ISSA Web Application Backend Services
+title: WheatGenomicsSLKG Web Application Backend Services
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -13,23 +13,16 @@ authors:
     email: franck.michel@inria.fr
     affiliation: 'University Côte d''Azur, CNRS, Inria'
     orcid: 'https://orcid.org/0000-0001-9064-0463'
-  - given-names: Youssef
-    family-names: Mekouar
-    affiliation: University Côte d'Azur
-repository-code: 'https://github.com/issa-project/web-visualization'
+repository-code: 'https://github.com/Wimmics/wheatgenomicsslkg-web-backend'
 abstract: >-
-  The ISSA project (https://issa.cirad.fr/) focuses on the
-  semantic indexing of scientific publications in an open
-  archive. This project is the backend part of a web application
-  that demonstrates the interest and use of such a semantic index
-  for researchers and librarians. It provides a set of Web APIs (services)
-  used by the frontend application.
+  This repository is the backend part of a web application meant to search articles in the WheatGenomicsSLKG and provide a visualization of their metadata.
 keywords:
   - information retrieval
   - semantic search
   - scientific literature
   - SPARQL
   - node
+  - wheat genomics
 license: Apache-2.0
-version: '1.1'
-date-released: '2023-10-04'
+version: '1.0'
+date-released: '2024-01-05'
