@@ -25,6 +25,6 @@ WHERE {
     union
     { ?entityUri rdf:type/rdfs:subClassOf* <{id}>; skos:prefLabel ?entityLabel. }
 
-    BIND(concat(?entityUri, '$', ?entityLabel) as ?matchedEntity)
+    BIND(concat(?entityUri, "$", ?entityLabel, "$Phenotype or trait") as ?matchedEntity)
 
 } group by ?document ?title ?date ?publisher ?lang limit 20000

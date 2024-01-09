@@ -41,8 +41,8 @@ function sortStrings(a, b) {
 
 
 /**
- * Split a string formatted like "URI$label$$URI$label$$..." into a document like
- * [ { "entityUri": "URI", "entityLabel": "label" }, { "entityUri": "URI", "entityLabel": "label" } ... ]
+ * Split a string formatted like "URI$label$type$$URI$label$type$$..." into a document like
+ * [ { "entityUri": "URI", "entityLabel": "label", "entityType": "type" }, { "entityUri": "URI", "entityLabel": "label", "entityType": "type" } ... ]
  *
  * @param {string} str - input string to process
  * @returns {array} - array of documents
@@ -50,8 +50,8 @@ function sortStrings(a, b) {
 function splitDollar(str) {
     let result = [];
     str.split('$$').forEach(_e => {
-        let [uri, label] = _e.split('$');
-        result.push({entityUri: uri, entityLabel: label});
+        let [uri, label, type] = _e.split('$');
+        result.push({entityUri: uri, entityLabel: label, entityType: type});
     });
     return result;
 }
@@ -363,10 +363,10 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
                     query = readTemplate("searchArticleSubConceptWTO.sparql", _uri);
                     break;
                 case "Gene":
-                    query = readTemplate("searchArticleSubConceptOther.sparql", _uri);
+                    query = readTemplate("searchArticleSubConceptGene.sparql", _uri);
                     break;
                 case "Variety":
-                    query = readTemplate("searchArticleSubConceptOther.sparql", _uri);
+                    query = readTemplate("searchArticleSubConceptVariety.sparql", _uri);
                     break;
                 default:
                     log.warn(`searchDocumentsSubConcept - Unknown entityType for uri ${_uri}: ${_entityType}`);

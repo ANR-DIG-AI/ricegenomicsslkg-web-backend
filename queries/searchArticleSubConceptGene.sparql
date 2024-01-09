@@ -23,6 +23,6 @@ WHERE {
     ?source frbr:partOf+ ?document.
 
     <{id}> skos:prefLabel ?entityLabel.
-    BIND(concat("{id}", '$', ?entityLabel) as ?matchedEntity)
+    BIND(concat("{id}", "$", ?entityLabel, "$Gene") as ?matchedEntity)
 
 } group by ?document ?title ?date ?publisher ?lang limit 20000

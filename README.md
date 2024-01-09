@@ -52,8 +52,9 @@ http://localhost:3000/getArticleMetadata/?uri=https://pubmed.ncbi.nlm.nih.gov/10
 http://localhost:3000/getArticleAuthors/?uri=https://pubmed.ncbi.nlm.nih.gov/10099937
 http://localhost:3000/getAbstractNamedEntities/?uri=https://pubmed.ncbi.nlm.nih.gov/10099937
 http://localhost:3000/autoComplete/?input=aestivum
-http://localhost:3000/searchDocuments/?uri=http://purl.obolibrary.org/obo/NCBITaxon_4565
-http://localhost:3000/searchDocumentsSubConcept/?uri=http://purl.obolibrary.org/obo/NCBITaxon_4565
+http://localhost:3000/searchDocuments/?uri=http://purl.obolibrary.org/obo/NCBITaxon_49317
+http://localhost:3000/searchDocumentsSubConcept/?uri=http://opendata.inrae.fr/wto/0000506
+http://localhost:3000/searchDocumentsSubConcept/?uri=http://purl.obolibrary.org/obo/NCBITaxon_49317
 ```
 In the `get*` services, uri is an example article URI that may no longer exist in the database at some point.
 
