@@ -24,7 +24,7 @@ PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 '''
 
 query_tpl = prefixes + '''
-SELECT DISTINCT ?entityUri ?entityLabel ?entityPrefLabel (count(?document) as ?count) ?source 
+SELECT DISTINCT ?entityUri ?entityLabel ?entityPrefLabel (count(?document) as ?count) ?entityType
 FROM NAMED <http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg>
 FROM NAMED <http://ns.inria.fr/d2kab/ontology/wto/v3>
 WHERE {
@@ -48,10 +48,10 @@ WHERE {
         UNION
         { ?entityUri skos:altLabel ?entityLabel; rdfs:label ?entityPrefLabel. }
 
-        bind("Phenotype or trait" as ?source)
+        bind("Phenotype or trait" as ?entityType)
       }
   	}
-} group by ?entityUri ?entityLabel ?entityPrefLabel ?source
+} group by ?entityUri ?entityLabel ?entityPrefLabel ?entityType
 offset %(offset)s
 limit %(limit)s
 '''

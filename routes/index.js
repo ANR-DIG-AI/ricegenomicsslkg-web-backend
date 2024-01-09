@@ -187,11 +187,11 @@ router.get('/getAbstractNamedEntities/', (req, res) => {
  *     "entityLabel": "Triticum aestivum Vavilovii Group",
  *     "entityPrefLabel": "Triticum aestivum var. vavilovii",
  *     "count": "3",
- *     "source": "Taxon"
+ *     "entityType": "Taxon"
  * }
  * entityPrefLabel is optional, it gives the preferred label in case entityLabel is not the preferred label.
  * "Count" is the number of documents in the knowledge base that are assigned the named entity with this URI/label.
- * "source" is a keyword for naming the source of the entity, one of Taxon, Phenotype or trait, Gene, Variety
+ * "entityType" is a keyword for naming the source of the entity, one of Taxon, Phenotype or trait, Gene, Variety
  */
 router.get('/autoComplete/', (req, res) => {
     let input = req.query.input.toLowerCase();
@@ -348,14 +348,14 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
         let uris = uri.split(',');
         let promises = [];
         uris.forEach(_uri => {
-            // Get the source KG of the current _uri from the list of entities (dumpEntities.json)
-            let _source = getSourceFromJson(_uri);
+            // Get the entity type of the current _uri from the list of entities (dumpEntities.json)
+            let _entityType = getEntityTypeFromJson(_uri);
             if (log.isDebugEnabled()) {
-                log.debug(`searchDocumentsSubConcept - Source for uri ${_uri}: ${_source}`);
+                log.debug(`searchDocumentsSubConcept - entityType for uri ${_uri}: ${_entityType}`);
             }
 
             let query;
-            switch (_source) {
+            switch (_entityType) {
                 case "Taxon":
                     query = readTemplate("searchArticleSubConceptNCBI.sparql", _uri);
                     break;
@@ -369,7 +369,7 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
                     query = readTemplate("searchArticleSubConceptOther.sparql", _uri);
                     break;
                 default:
-                    log.warn(`searchDocumentsSubConcept - Unknown source for uri ${_uri}: ${_source}`);
+                    log.warn(`searchDocumentsSubConcept - Unknown entityType for uri ${_uri}: ${_entityType}`);
                     query = '';
             }
 
@@ -439,14 +439,14 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
 
 
 /**
- * Get the name of the source KG of one entity (given by its URI) from the list of entities (dumpEntities.json)
+ * Get the name of the entityType of one entity (given by its URI) from the list of entities (dumpEntities.json)
  * @param uri
  * @return {*|string|string}
  */
-function getSourceFromJson(uri) {
+function getEntityTypeFromJson(uri) {
     try {
         let entityData = entitiesJson.find(_entry => uri === _entry.entityUri);
-        return entityData ? entityData.source : "Unknown";
+        return entityData ? entityData.entityType : "Unknown";
     } catch (err) {
         console.error('Error reading dumpEntities.json: ' + err);
         return "Unknown";

@@ -35,7 +35,7 @@ def submit_sparql_query_chain(query_tpl, totalResults, maxResultsPerQuery):
                 if 'entityPrefLabel' in row:
                     item['entityPrefLabel'] = row['entityPrefLabel']['value']
                 item['count'] = row['count']['value']
-                item['source'] = row['source']['value']
+                item['entityType'] = row['entityType']['value']
                 output.append(item)
 
         print("Formatting the JSON output...")

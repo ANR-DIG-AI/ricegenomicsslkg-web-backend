@@ -24,7 +24,7 @@ PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
 '''
 
 query_tpl = prefixes + '''
-SELECT DISTINCT ?entityUri ?entityLabel ?entityPrefLabel (COUNT(?document) AS ?count) ?source
+SELECT DISTINCT ?entityUri ?entityLabel ?entityPrefLabel (COUNT(?document) AS ?count) ?entityType
 FROM <http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg>
 WHERE {
   {
@@ -43,13 +43,13 @@ WHERE {
         "Variety",
         IF(STRSTARTS(STR(?entityUri), "http://ns.inria.fr/d2kab/gene"), "Gene", "")
       )
-      AS ?source
+      AS ?entityType
     )
     FILTER (!STRSTARTS(STR(?entityUri), "http://purl.obolibrary.org/obo/NCBITaxon"))
     FILTER (!STRSTARTS(STR(?entityUri), "http://ns.inria.fr/d2kab/marker"))
     FILTER (!STRSTARTS(STR(?entityUri), "http://opendata.inrae.fr/wto"))
   }
-}  group by ?entityUri ?entityLabel ?entityPrefLabel ?source
+}  group by ?entityUri ?entityLabel ?entityPrefLabel ?entityType
 offset %(offset)s
 limit %(limit)s
 '''

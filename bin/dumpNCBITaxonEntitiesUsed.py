@@ -23,7 +23,7 @@ PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
 '''
 
 query_tpl = prefixes + '''
-SELECT DISTINCT ?entityUri ?entityLabel ?entityPrefLabel (count(?document) as ?count) ?source
+SELECT DISTINCT ?entityUri ?entityLabel ?entityPrefLabel (count(?document) as ?count) ?entityType
 FROM NAMED <http://ns.inria.fr/d2kab/graph/wheatgenomicsslkg>
 FROM NAMED <http://purl.obolibrary.org/obo/ncbitaxon/ncbitaxon.owl>
 WHERE {
@@ -43,10 +43,10 @@ WHERE {
             { ?entityUri rdfs:label ?entityLabel. }
             union
             { ?entityUri <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> ?entityLabel; rdfs:label ?entityPrefLabel }
-            bind("Taxon" as ?source)
+            bind("Taxon" as ?entityType)
     	}
 	}
-} group by ?entityUri ?entityLabel ?entityPrefLabel ?source
+} group by ?entityUri ?entityLabel ?entityPrefLabel ?entityType
 offset %(offset)s
 limit %(limit)s
 '''
