@@ -33,16 +33,13 @@ Therefore, the SELECT clause of the SPARQL queries are the de facto documentatio
 since they give the names of the variables (var1 and var2 in the example above).
 
 
-## Installation
+## Standalone deployment
 
 Pre-requisite: [node.js](https://nodejs.org/) 17, yarn.
 
 Install the dependencies with `yarn install`.
 
-
-## Run
-
-Run the application: ` yarn start`
+Run the application: `yarn start`
 
 By default, the node.js server listens on port 3000. This can be changed in file [.env](.env).
 
@@ -56,7 +53,21 @@ http://localhost:3000/searchDocuments/?uri=http://purl.obolibrary.org/obo/NCBITa
 http://localhost:3000/searchDocumentsSubConcept/?uri=http://opendata.inrae.fr/wto/0000506
 http://localhost:3000/searchDocumentsSubConcept/?uri=http://purl.obolibrary.org/obo/NCBITaxon_49317
 ```
-In the `get*` services, uri is an example article URI that may no longer exist in the database at some point.
+In the `get*` services, uri is an example article that may no longer exist in the database at some point.
+
+### Docker deployment
+
+The repository comes with a Dockerfile and a docker-compose file.
+After cloning, build the application with this command:
+
+```
+docker-compose build
+```
+
+Then start the services with:
+```
+docker-compose up -d
+```
 
 
 ### Logging
