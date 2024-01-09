@@ -1,8 +1,7 @@
 PREFIX dct:    <http://purl.org/dc/terms/>
-prefix fabio:  <http://purl.org/spar/fabio/>
-prefix frbr:   <http://purl.org/vocab/frbr/core#>
+PREFIX fabio:  <http://purl.org/spar/fabio/>
+PREFIX frbr:   <http://purl.org/vocab/frbr/core#>
 PREFIX oa:     <http://www.w3.org/ns/oa#>
-PREFIX schema: <http://schema.org/>
 
 SELECT ?document ?title ?date ?publisher ?lang (group_concat(distinct ?author, "$") as ?authors)
 
@@ -15,6 +14,6 @@ WHERE {
     OPTIONAL { ?document dct:source ?publisher. }
     OPTIONAL { ?document dct:language ?lang. }
 
-    {triples}
+{triples}
 
 } group by ?document ?title ?date ?publisher ?lang limit 20000

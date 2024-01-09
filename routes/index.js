@@ -90,7 +90,7 @@ router.get('/getArticleMetadata/', (req, res) => {
                     data.forEach(res => log.trace(res));
                 }
                 return data;
-            }).then(res => res);
+            });
 
         } catch (err) {
             log.error('getArticleMetadata error: ' + err);
@@ -134,7 +134,7 @@ router.get('/getArticleAuthors/', (req, res) => {
                     data.forEach(res => log.trace(res));
                 }
                 return data;
-            }).then(res => res);
+            });
 
         } catch (err) {
             log.error('getArticleAuthors error: ' + err);
@@ -166,7 +166,7 @@ router.get('/getAbstractNamedEntities/', (req, res) => {
                     data.forEach(res => log.trace(res));
                 }
                 return data;
-            }).then(res => res);
+            });
 
         } catch (err) {
             log.error('getAbstractNamedEntities error: ' + err);
@@ -182,14 +182,16 @@ router.get('/getAbstractNamedEntities/', (req, res) => {
  *
  * @param {string} input - first characters entered by the use
  * @return {document} - The output is a JSON array whose documents are shaped as in the example below:
- *     {
- *         "entityUri": "http://aims.fao.org/aos/agrovoc/c_4459",
- *         "entityLabel": "Luffa cylindrica",
- *         "entityPrefLabel": "Luffa aegyptica",
- *         "count": "1"
- *     }
+ * {
+ *     "entityUri": "http://purl.obolibrary.org/obo/NCBITaxon_69995",
+ *     "entityLabel": "Triticum aestivum Vavilovii Group",
+ *     "entityPrefLabel": "Triticum aestivum var. vavilovii",
+ *     "count": "3",
+ *     "source": "Taxon"
+ * }
  * entityPrefLabel is optional, it gives the preferred label in case entityLabel is not the preferred label.
  * "Count" is the number of documents in the knowledge base that are assigned the named entity with this URI/label.
+ * "source" is a keyword for naming the source of the entity, one of Taxon, Phenotype or trait, Gene, Variety
  */
 router.get('/autoComplete/', (req, res) => {
     let input = req.query.input.toLowerCase();
@@ -244,12 +246,12 @@ router.get('/autoComplete/', (req, res) => {
  * {
  *   "result": [
  *     {
- *       "document": "http://data-issa.cirad.fr/document/585171",
- *       "title": "The endless palm oil debate: Science-based solutions beyond controversies",
- *       "date": "2017",
- *       "authors": [
- *         "Alain Rival", "X Y"
- *       ]
+ *       "document": "https://pubmed.ncbi.nlm.nih.gov/19878583",
+ *       "title": "Genetic load and transgenic mitigating genes in transgenic Brassica rapa (field mustard) x Brassica napus (oilseed rape) hybrid populations.",
+ *       "date": "2009",
+ *       "publisher": "BMC biotechnology",
+ *       "lang": "eng",
+ *       "authors": [ "Al-Ahmad H", "Gressel J", "Halfhill MD", "Millwood RJ", ... ]
  *     },
  *     ...
  * }
@@ -269,7 +271,7 @@ router.get('/searchDocuments/', (req, res) => {
 
         let uris = uri.split(',');
         uris.forEach(_uri => {
-            let lineTpl = '?annotation' + i + ' oa:hasBody <{uri}>; oa:hasTarget [ oa:hasSource ?articleUriAbstract' + i + ' ] .?articleUriAbstract' + i + ' frbr:partOf+ ?document.';
+            let lineTpl = `?a${i} oa:hasBody <{uri}>; oa:hasTarget [ oa:hasSource ?abstract${i} ]. ?abstract${i} frbr:partOf+ ?document.`;
             lines += lineTpl.replaceAll("{uri}", _uri) + '\n';
             i = i + 1;
         })
@@ -296,7 +298,7 @@ router.get('/searchDocuments/', (req, res) => {
                         data.forEach(res => log.trace(res));
                     }
                     return data;
-                }).then(res => res);
+                });
 
             } catch (err) {
                 log.error('searchDocuments error: ' + err);
@@ -313,21 +315,21 @@ router.get('/searchDocuments/', (req, res) => {
  *
  * @param {string} uri - URIs of the named entities to search, passed on the query string either as "uri=a,b,..." or "uri=a&uri=b&..."
  * @return {document} - output like this:
- *
  * {
  *   "result": [
  *     {
- *       "document": "http://data-issa.cirad.fr/document/601515",
- *       "title": "Transformation of coffee-growing across Latin America",
- *       "date": "2022",
- *       "authors": [
- *         "Armbrecht, Inge", "Avelino, Jacques", "Barrera, Juan Francisco"
- *       ],
- *       "matchedEntities": [{
- *           "entityUri": "http://aims.fao.org/aos/agrovoc/c_33561",
- *           "entityLabel": "sustainable agriculture"
- *         },
- *         ...
+ *       "document": "https://pubmed.ncbi.nlm.nih.gov/19878583",
+ *       "title": "Genetic load and transgenic mitigating genes in transgenic Brassica rapa (field mustard) x Brassica napus (oilseed rape) hybrid populations.",
+ *       "date": "2009",
+ *       "publisher": "BMC biotechnology",
+ *       "lang": "eng",
+ *       "authors": [ "Al-Ahmad H", "Gressel J", "Halfhill MD", "Millwood RJ", ... ]
+ *     },
+ *     "matchedEntities": [
+ *         {
+ *           "entityUri": "http://purl.obolibrary.org/obo/NCBITaxon_4565",
+ *           "entityLabel": "Triticum aestivum"
+ *         }, ...
  *       ]
  *     },
  *     ...
@@ -360,8 +362,14 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
                 case "Phenotype or trait":
                     query = readTemplate("searchArticleSubConceptWTO.sparql", _uri);
                     break;
+                case "Gene":
+                    query = readTemplate("searchArticleSubConceptOther.sparql", _uri);
+                    break;
+                case "Variety":
+                    query = readTemplate("searchArticleSubConceptOther.sparql", _uri);
+                    break;
                 default:
-                    log.error(`searchDocumentsSubConcept - Unknown source for uri ${_uri}: ${_source}`);
+                    log.warn(`searchDocumentsSubConcept - Unknown source for uri ${_uri}: ${_source}`);
                     query = '';
             }
 
@@ -377,7 +385,7 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
                         _result = await d3.sparql(process.env.SEMANTIC_INDEX_SPARQL_ENDPOINT, query).then((data) => {
                             log.info('searchDocumentsSubConcept: query for uri ' + _uri + ' returned ' + data.length + ' results');
                             return data;
-                        }).then(res => res);
+                        });
                     } catch (err) {
                         log.error('searchDocumentsSubConcept error: ' + err);
                         _result = err;
@@ -437,7 +445,7 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
  */
 function getSourceFromJson(uri) {
     try {
-        let entityData = entitiesJson.find(_entry => uri.includes(_entry.entityUri));
+        let entityData = entitiesJson.find(_entry => uri === _entry.entityUri);
         return entityData ? entityData.source : "Unknown";
     } catch (err) {
         console.error('Error reading dumpEntities.json: ' + err);
