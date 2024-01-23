@@ -1,11 +1,10 @@
 import json
-from SPARQLWrapper import SPARQLWrapper, JSON, POST
-import json
 import math
+from SPARQLWrapper import SPARQLWrapper, JSON, POST
 
 endpoint = "http://d2kab.i3s.unice.fr/sparql"
 
-def sparql_endpoint_call(endpoint, query):
+def submit_sparql_query(endpoint, query):
     """
     Simple execution of a SELECT SPARQL query with JSON response
     """
@@ -24,7 +23,7 @@ def submit_sparql_query_chain(query_tpl, totalResults, maxResultsPerQuery):
         for index in range(math.floor(totalResults/maxResultsPerQuery) + 1):
             offset = index * maxResultsPerQuery
             print(f"Querying SPARQL endpoint [limit: {maxResultsPerQuery}, offset: {offset}]...")
-            results = sparql_endpoint_call(endpoint, query_tpl % {"limit": maxResultsPerQuery, "offset": offset})
+            results = submit_sparql_query(endpoint, query_tpl % {"limit": maxResultsPerQuery, "offset": offset})
 
             # Simplify the SPARQL JSON format to keep only the values
             print("Reformatting output...")

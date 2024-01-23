@@ -1,12 +1,18 @@
 let express = require('express');
 let fs = require('fs');
+let path = require('path');
 let logger = require("../modules/logger");
 let d3 = require('d3-sparql');
 require('dotenv').config();
 
 let log = logger.application;
 let router = express.Router();
-let entitiesJson = require('../data/dumpEntities.json')
+
+// Load the named entities labels for auto-complete
+let geneVarNEs = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../data/dumpEntitiesGeneVariety.json"), "utf8"));
+let taxonNEs = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../data/dumpEntitiesNCBITaxon.json"), "utf8"));
+let wtoNEs = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../data/dumpEntitiesWTO.json"), "utf8"));
+let autoCompleteEntities = [].concat(geneVarNEs, taxonNEs, wtoNEs);
 
 log.info('Starting up backend services');
 
@@ -199,11 +205,11 @@ router.get('/autoComplete/', (req, res) => {
         log.debug('autoComplete - input: ' + input);
     }
 
-    // Count the number of entities selected (to return ony a maximum number)
+    // Count the number of entities selected (to return only a maximum number)
     let _count = 0;
 
     // Search for entities whose label starts like the input
-    let _startsWith = entitiesJson.filter(_entity => {
+    let _startsWith = autoCompleteEntities.filter(_entity => {
         if (_count < process.env.SEARCH_MAX_AUTOCOMPLETE) {
             if (_entity.entityLabel.toLowerCase().startsWith(input)) {
                 _count++;
@@ -217,7 +223,7 @@ router.get('/autoComplete/', (req, res) => {
         _startsWith.forEach(res => log.trace(res));
     }
 
-    let _includes = entitiesJson.filter(_entity => {
+    let _includes = autoCompleteEntities.filter(_entity => {
         if (_count < process.env.SEARCH_MAX_AUTOCOMPLETE) {
             let _entityLabLow = _entity.entityLabel.toLowerCase()
 
@@ -445,7 +451,7 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
  */
 function getEntityTypeFromJson(uri) {
     try {
-        let entityData = entitiesJson.find(_entry => uri === _entry.entityUri);
+        let entityData = autoCompleteEntities.find(_entry => uri === _entry.entityUri);
         return entityData ? entityData.entityType : "Unknown";
     } catch (err) {
         console.error('Error reading dumpEntities.json: ' + err);

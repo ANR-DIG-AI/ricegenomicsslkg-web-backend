@@ -6,10 +6,6 @@ The additional field 'count' gives the number of articles that have that concept
 The result is used by the auto-completion of user inputs on the search form.
 """
 
-import json
-from SPARQLWrapper import SPARQLWrapper, JSON, POST
-import json
-import math
 from SPARQLQuery import submit_sparql_query_chain
 
 limit = 10000
