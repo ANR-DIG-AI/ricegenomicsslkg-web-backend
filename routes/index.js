@@ -30,9 +30,9 @@ function readTemplate(template, id) {
 
 
 /**
- * Sort 2 strings in case-insensitive alphabetic order
- * @param {string} a
- * @param {string} b
+ * Sort 2 entities in case-insensitive alphabetic order of their labels
+ * @param {document} a
+ * @param {document} b
  * @returns {number}
  */
 function sortStrings(a, b) {
@@ -47,8 +47,22 @@ function sortStrings(a, b) {
 
 
 /**
- * Split a string formatted like "URI$label$type$$URI$label$type$$..." into a document like
- * [ { "entityUri": "URI", "entityLabel": "label", "entityType": "type" }, { "entityUri": "URI", "entityLabel": "label", "entityType": "type" } ... ]
+ * Sort 2 entities in descending order of their count
+ * @param {document} a
+ * @param {document} b
+ * @returns {number}
+ */
+function sortDescCount(a, b) {
+    if (Number(a.count) < Number(b.count)) return 1;
+    if (Number(a.count) > Number(b.count)) return -1;
+    return 0;
+}
+
+
+
+/**
+     * Split a string formatted like "URI$label$type$$URI$label$type$$..." into a document like
+     * [ { "entityUri": "URI", "entityLabel": "label", "entityType": "type" }, { "entityUri": "URI", "entityLabel": "label", "entityType": "type" } ... ]
  *
  * @param {string} str - input string to process
  * @returns {array} - array of documents
@@ -183,6 +197,54 @@ router.get('/getAbstractNamedEntities/', (req, res) => {
 });
 
 
+
+/**
+ * Complete the provided input using labels from an array of entities
+ * @param {string} input - first characters entered by the use
+ * @param {array} entities - array containing all the possible entities to look for
+ * @return {array} - JSON array with 2 arrays: one whose documents are the entities that start like the input,
+ * a second whose documents are the entities that contain the input
+ */
+function getAutoCompleteSuggestions(input, entities) {
+
+    // Count the number of entities selected (to return only a maximum number)
+    let _count = 0;
+
+    // Search for entities whose label starts like the input
+    let _startsWith = entities.filter(_entity => {
+        if (_count < process.env.SEARCH_MAX_AUTOCOMPLETE) {
+            if (_entity.entityLabel.toLowerCase().startsWith(input)) {
+                _count++;
+                return true;
+            }
+        } else return false;
+    });
+    if (log.isTraceEnabled()) {
+        log.trace('getAutoCompleteSuggestions - Result startsWith: ');
+        _startsWith.forEach(res => log.trace(res));
+    }
+
+    // Additional results: search for entities whose label includes the input but does not start like the input
+    let _includes = entities.filter(_entity => {
+        if (_count < process.env.SEARCH_MAX_AUTOCOMPLETE) {
+            let _entityLabLow = _entity.entityLabel.toLowerCase()
+
+            // Find entities whose label includes the input but that was not already selected above
+            if (_entityLabLow.includes(input) &&
+                !_startsWith.some(_s => _s.entityLabel.toLowerCase() === _entityLabLow && _s.entityUri === _entity.entityUri)) {
+                _count++;
+                return true;
+            }
+        } else return false;
+    });
+    if (log.isTraceEnabled()) {
+        log.trace('getAutoCompleteSuggestions - Result includes: ');
+        _includes.forEach(res => log.trace(res));
+    }
+
+    return [_startsWith, _includes];
+}
+
 /**
  * Complete the user's input using entities labels.
  *
@@ -195,8 +257,8 @@ router.get('/getAbstractNamedEntities/', (req, res) => {
  *     "count": "3",
  *     "entityType": "Taxon"
  * }
- * entityPrefLabel is optional, it gives the preferred label in case entityLabel is not the preferred label.
- * "Count" is the number of documents in the knowledge base that are assigned the named entity with this URI/label.
+ * "entityPrefLabel" is optional, it gives the preferred label in case entityLabel is not the preferred label.
+ * "count" is the number of documents in the knowledge base that are assigned the entity with this URI/label.
  * "entityType" is a keyword for naming the source of the entity, one of Taxon, Phenotype or trait, Gene, Variety
  */
 router.get('/autoComplete/', (req, res) => {
@@ -205,43 +267,8 @@ router.get('/autoComplete/', (req, res) => {
         log.debug('autoComplete - input: ' + input);
     }
 
-    // Count the number of entities selected (to return only a maximum number)
-    let _count = 0;
-
-    // Search for entities whose label starts like the input
-    let _startsWith = autoCompleteEntities.filter(_entity => {
-        if (_count < process.env.SEARCH_MAX_AUTOCOMPLETE) {
-            if (_entity.entityLabel.toLowerCase().startsWith(input)) {
-                _count++;
-                return true;
-            }
-        } else return false;
-    }).sort(sortStrings);
-
-    if (log.isTraceEnabled()) {
-        log.trace('autoComplete - Result _startsWith: ');
-        _startsWith.forEach(res => log.trace(res));
-    }
-
-    let _includes = autoCompleteEntities.filter(_entity => {
-        if (_count < process.env.SEARCH_MAX_AUTOCOMPLETE) {
-            let _entityLabLow = _entity.entityLabel.toLowerCase()
-
-            // Find entities whose label includes the input but that was not already selected above
-            if (_entityLabLow.includes(input) &&
-                !_startsWith.some(_s => _s.entityLabel.toLowerCase() === _entityLabLow && _s.entityUri === _entity.entityUri)) {
-                _count++;
-                return true;
-            }
-        } else return false;
-    }).sort(sortStrings);
-
-    if (log.isTraceEnabled()) {
-        log.trace('autoComplete - Result includes: ');
-        _includes.forEach(res => log.trace(res));
-    }
-
-    res.status(200).json(_startsWith.concat(_includes));
+    let [startsWith, includes] = getAutoCompleteSuggestions(input, autoCompleteEntities);
+    res.status(200).json(startsWith.sort(sortDescCount).concat(includes.sort(sortDescCount)));
 });
 
 
