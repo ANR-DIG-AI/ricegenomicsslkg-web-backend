@@ -310,7 +310,7 @@ router.get('/searchDocuments/', (req, res) => {
         })
 
         // Insert the triple patterns into the SPARQL query
-        let queryTpl = fs.readFileSync('queries/searchArticle.sparql', 'utf8');
+        let queryTpl = fs.readFileSync('queries/searchDocumentByConcept.sparql', 'utf8');
         let query = queryTpl.replace("{triples}", lines);
         if (log.isDebugEnabled()) {
             log.debug('searchDocuments - Will submit SPARQL query: \n' + query);
@@ -390,16 +390,16 @@ router.get('/searchDocumentsSubConcept/', async (req, res) => {
             let query;
             switch (_entityType) {
                 case "Taxon":
-                    query = readTemplate("searchArticleSubConceptNCBI.sparql", _uri);
+                    query = readTemplate("searchDocumentBySubConceptNCBI.sparql", _uri);
                     break;
                 case "Phenotype or trait":
-                    query = readTemplate("searchArticleSubConceptWTO.sparql", _uri);
+                    query = readTemplate("searchDocumentBySubConceptWTO.sparql", _uri);
                     break;
                 case "Gene":
-                    query = readTemplate("searchArticleSubConceptGene.sparql", _uri);
+                    query = readTemplate("searchDocumentBySubConceptGene.sparql", _uri);
                     break;
                 case "Variety":
-                    query = readTemplate("searchArticleSubConceptVariety.sparql", _uri);
+                    query = readTemplate("searchDocumentBySubConceptVariety.sparql", _uri);
                     break;
                 default:
                     log.warn(`searchDocumentsSubConcept - Unknown entityType for uri ${_uri}: ${_entityType}`);
