@@ -1,0 +1,11 @@
+version: "3.2"
+services:
+  web-backend:
+    image: d2kab/ricegemomicsslkg-web-backend
+    container_name: ricegemomicsslkg-web-backend
+    build:
+      context: .
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 3000:3000

@@ -1,0 +1,27 @@
+{
+  "name": "wheatgenomicsslkg-web--backend",
+  "version": "1.0",
+  "license": "Apache-2.0",
+  "repository": "github:Wimmics/wheatgenomicsslkg-web-backend",
+  "scripts": {
+    "start": "node ./bin/www",
+    "linter": "eslint.js",
+    "lint": "eslint .  --ext .js",
+    "lint-fix": "eslint --fix .  --ext .js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "d3-sparql": "^2.0.0",
+    "debug": "~4.3.4",
+    "dotenv": "^16.3.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "isomorphic-fetch": "^3.0.0",
+    "log4js": ">=6.4.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0"
+  }
+}

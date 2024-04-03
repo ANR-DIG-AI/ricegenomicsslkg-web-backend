@@ -1,0 +1,22 @@
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX purl:    <http://purl.org/dc/elements/1.1/>
+PREFIX frbr:    <http://purl.org/vocab/frbr/core#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix fabio:   <http://purl.org/spar/fabio/>
+
+SELECT (group_concat(distinct ?author, "$") as ?authors) ?title ?date ?pub ?lang ?abs
+FROM <http://ns.inria.fr/d2kab/graph/ricegenomicsslkg/abstract_annotations>
+FROM <http://ns.inria.fr/d2kab/graph/ricegenomicsslkg> 
+WHERE {
+    OPTIONAL { <{id}> purl:title ?title. FILTER isLiteral(?title) }
+    OPTIONAL { <{id}> purl:issued ?date. }
+    OPTIONAL { <{id}> purl:source ?pub. }
+    OPTIONAL { <{id}> purl:creator ?author. }
+    OPTIONAL { <{id}> purl:language ?lang. }
+    OPTIONAL {
+        <{id}> a fabio:ResearchPaper;
+      dct:abstract ?abs.
+        ?abstracttxt
+            frbr:partOf <{id}>.
+    }
+}
